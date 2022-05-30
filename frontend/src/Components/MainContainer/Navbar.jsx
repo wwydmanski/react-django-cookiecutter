@@ -34,7 +34,7 @@ const Navbar = (props) => {
             <div className="w-100" style={{ backgroundColor: "#113C4A", color: "white" }}>
                 <MDBContainer style={{ maxWidth: "auto" }}>
                     <MDBNavbarNav style={{ justifyContent: "center" }}>
-                        <MDBNavbarItem active>
+                        <MDBNavbarItem>
                             <MDBNavbarLink href="#!">Home</MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
