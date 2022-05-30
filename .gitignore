@@ -1,0 +1,4 @@
+frontend/.parcel-cache
+**/__pycache__
+**/*.sqlite3
+frontend/node_modules

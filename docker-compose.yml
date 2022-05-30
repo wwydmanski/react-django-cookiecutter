@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  django:
+    build: ./backend
+    container_name: django_backend
+    volumes:
+      - ./backend:/app/backend
+      - ./docs:/app/docs
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings.development
+    stdin_open: true
+    tty: true
+    command: python manage.py runserver 0.0.0.0:8000
+    
+  react:
+    build: ./frontend
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend:/app
+      # One-way volume to use node_modules from inside image
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - ENDPOINT=http://localhost:8000
+    # depends_on:
+      # - django
+    command: yarn start
