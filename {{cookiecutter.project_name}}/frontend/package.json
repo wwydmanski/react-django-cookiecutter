@@ -4,6 +4,7 @@
   "proxy": "http://django:8000",
   "private": true,
   "dependencies": {
+    "aphrodite": "^2.4.0",
     "axios": "0.21.2",
     "dotenv": "10.0.0",
     "eslint-config-react-app": "6.0.0",
